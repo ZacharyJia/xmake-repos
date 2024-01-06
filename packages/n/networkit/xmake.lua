@@ -14,6 +14,8 @@ package("networkit")
     add_deps("cmake")
     add_deps("openmp")
 
+    add_links("networkit")
+
     on_download(function (package, opt)
         local url = opt.url
         local sourcedir = opt.sourcedir
