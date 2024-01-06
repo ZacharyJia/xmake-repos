@@ -10,6 +10,7 @@ package("networkit")
     add_urls("https://github.com/networkit/networkit.git")
 
     add_versions("10.1", "35d11422b731f3e3f06ec05615576366be96ce26dd23aa16c8023b97f2fe9039")
+    add_patches("10.1", path.join(os.scriptdir(), "patches", "10.1", "cmakelists.patch"), "d6e91b928e92907ed9028fa345a55e69c141c38bf57a8e188c5d077cd223717f")
 
     add_deps("cmake")
     add_deps("openmp")

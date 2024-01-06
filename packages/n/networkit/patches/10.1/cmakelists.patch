@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2214b15..7e21c4c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -708,7 +708,7 @@ install(DIRECTORY include/networkit
+ # Install ttmath header files
+ install(DIRECTORY extlibs/ttmath/ttmath
+        DESTINATION ${NETWORKIT_INSTALL_INCLUDE_DIR}
+-       FILES_MATCHING PATTERN "*.hpp")
++       FILES_MATCHING PATTERN "*")
+ 
+ ################################################################################
+ # Prepare pkg-config file
+ 
