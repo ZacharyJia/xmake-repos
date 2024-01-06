@@ -34,6 +34,5 @@ package("networkit")
     end)
 
     on_test(function (package)
-        assert(package:has_cxxtypes("NetworKit::Graph", {includes = "networkit/graph/Graph.hpp", languages="c++17"}))
+        assert(package:has_cxxtypes("NetworKit::Graph", {includes = "networkit/graph/Graph.hpp", configs = {languages = "c++17"}}))
     end)
-
