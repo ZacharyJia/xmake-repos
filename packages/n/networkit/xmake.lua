@@ -37,7 +37,6 @@ package("networkit")
             table.insert(configs, "-DNETWORKIT_STATIC=OFF")
         else
             table.insert(configs, "-DBUILD_SHARED_LIBS=OFF")
-            table.insert(configs, "-DNETWORKIT_MONOLITH=OFF")
             table.insert(configs, "-DNETWORKIT_STATIC=ON")
         end
         -- table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
