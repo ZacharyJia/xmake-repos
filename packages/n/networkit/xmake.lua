@@ -32,7 +32,15 @@ package("networkit")
     on_install(function (package)
         local configs = {}
         table.insert(configs, "-DCMAKE_BUILD_TYPE=" .. (package:is_debug() and "Debug" or "Release"))
-        table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
+        if package:config("shared") then
+            table.insert(configs, "-DBUILD_SHARED_LIBS=ON")
+            table.insert(configs, "-DNETWORKIT_STATIC=OFF")
+        else
+            table.insert(configs, "-DBUILD_SHARED_LIBS=OFF")
+            table.insert(configs, "-DNETWORKIT_MONOLITH=OFF")
+            table.insert(configs, "-DNETWORKIT_STATIC=ON")
+        end
+        -- table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
         import("package.tools.cmake").install(package, configs)
     end)
 
