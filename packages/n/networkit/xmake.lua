@@ -20,9 +20,9 @@ package("networkit")
     on_download(function (package, opt)
         local url = opt.url
         local sourcedir = opt.sourcedir
-        -- 如果目录已经存在，就不再下载
+        -- 如果目录已经存在，就删掉重新下载
         if os.isdir(sourcedir) then
-            return
+            os.rm(sourcedir)
         end
 
         import("devel.git")
